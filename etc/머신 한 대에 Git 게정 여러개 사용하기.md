@@ -46,6 +46,8 @@ github -> settings -> SSH and GPG keys 에 private key값 입력
 
 #### ssh-agent에 키 등록
 
+매번 git 명령어 쳐줄때마다 권한 로그인하기 귀찮으니까 ssh-agent 등록해줘야 한다.
+
 ```zsh
 $ eval "$(ssh-agent -s)"
 $ ssh-add -K ~/.ssh/id_rsa_personal
