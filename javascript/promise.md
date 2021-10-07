@@ -74,6 +74,8 @@ console.log("after function")
 
 결과적으로, 순서 `before function, in function, after function, one`
 
+### catch의 동작방법
+
 ### Promise.all, Promise.racem, Promise.allSettled
 
 **Promise.all**은 모든 프로미스가 끝났을 때 한 번에 return한다(순서 보장, but 병렬적으로 처리되기 때문에 끝나는 시간은 제각각)
@@ -112,7 +114,6 @@ async function pickAllFruitsWithPromiseAll() {
 	const [apple, banana] = await Promise.all([getApple(), getBanana()])
 	return `${apple} + ${banana}`
 }
-
 pickAllFruitsWithPromiseAll().then(console.log) // apple + banana
 ```
 
@@ -127,3 +128,5 @@ pickFirstFruit().then(console.log) // banana
 ```
 
 **Promise.allSettled**는 에러가 발생하더라도 다음 모든 프로미스를 병력적으로 실행 후 결과를 리턴한다. `Promise.all`은 에러가 발생하면 이후 프로미스를 무시
+
+### 순차적으로 Promise를 실행하는 법
